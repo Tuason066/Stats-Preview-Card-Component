@@ -1,0 +1,226 @@
+// VARIABLE
+
+// Font-family: 'Lexend Deca', sans-serif;
+// Font-family: 'Inter', sans-serif;
+
+// Background
+$Background--Main--clr: hsl(233, 47%, 7%);
+$Background--Card--clr: hsl(244, 38%, 16%);
+$Violet: hsl(277, 64%, 61%);
+
+// Paragraph
+$Heading--clr: hsl(0, 0%, 100%);
+$Text--clr: hsla(0, 0%, 100%, 0.75);
+$SubText-Heading--stats--clr: hsla(0, 0%, 100%, 0.6);
+
+// Margin
+$Margin-Centered: 0 auto;
+
+// RESET
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 15px;
+}
+
+img {
+    max-width: 100%;
+}
+
+// BASE STYLE
+
+span {
+    color: $Violet;
+}
+
+
+// MOBILE STYLE
+
+.desktop--image {
+    display: none;
+}
+
+.preview {
+    padding: 4em 0 0;
+    background-color: $Background--Main--clr;
+    max-width: 1440px;
+    margin: $Margin-Centered;
+}
+
+.card {
+    max-width: 350px;
+    margin: $Margin-Centered;
+    width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    color: $Text--clr;
+    background-color: $Background--Card--clr;
+
+    &__content {
+        width: 85%;
+        margin: $Margin-Centered;
+        padding: 2em 0;
+    }
+
+    &__header {
+        color: $Heading--clr;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 1.9rem;
+    }
+    &__text {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        margin: 2em 0;
+        line-height: 1.5;
+    }
+
+
+    &__image--overlay {
+        position: relative;
+    }
+    &__image--overlay::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $Violet;
+        mix-blend-mode: multiply;
+    }
+
+
+}
+
+.stats {
+    position: relative;
+
+    &__header {
+        color: $Heading--clr;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 1.7rem;
+    }
+    &__text {
+        color: $SubText-Heading--stats--clr;
+        font-family: 'Lexend Deca', sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: .7rem;
+        letter-spacing: 1px;
+        line-height: 2;
+    }
+
+}
+
+.stats__item + .stats__item {
+    margin-top: 2em;
+}
+
+
+.footer {
+    padding: 2em 0 2em 0;
+    background-color: $Background--Main--clr;
+    max-width: 1440px;
+    margin: $Margin-Centered;
+
+    &__text {
+        width: 80%;
+        margin: $Margin-Centered;
+        text-align: center;
+        color: #fff;
+        font-size: 1rem;
+        font-family: 'Inter', sans-serif;
+    }
+
+    &__link {
+        color: $Violet;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .preview {
+        padding: 8em 0 0 0;
+    }
+
+    .mobile--image {
+        display: none;
+    }
+    .desktop--image {
+        display: block;
+    }
+
+    .card {
+        max-width: none;
+        width: 80%;
+        display: flex;
+
+        &__image--overlay {
+            width: 50%;
+        }
+
+        &__image {
+            width: 100%;
+            height: 100%;
+        }
+
+        &__content {
+            width: 50%;
+            text-align: left;
+            padding: 4em 6em 4em 3em;
+        }
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .stats__item + .stats__item {
+        margin-top: 0;
+    }
+
+    .footer {
+        padding: 3.5em 0;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    // .card__content > * {
+    //     border: 1px solid red;
+    // }
+
+    .card__content {
+        padding: 4em 6em 4em 4em;
+    }
+
+    .card__header {
+        font-size: 2.2rem;
+    }
+    .card__text {
+        font-size: 1rem;
+        margin: 2em 0 5em 0;
+    }
+
+    .stats__header {
+        font-size: 1.7rem;
+    }
+
+    .stats__text {
+        font-size: .8rem;
+    }
+
+}
